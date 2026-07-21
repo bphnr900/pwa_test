@@ -1,9 +1,21 @@
-document.getElementById("addButton").addEventListener("click", () => {
-    const num1 = Number(document.getElementById("num1").value);
-    const num2 = Number(document.getElementById("num2").value);
+import{Sudoku} from "./model/sudoku.js"
+import{BoardView} from "./view/board.js"
+import{GameController} from "./controller/GameController.js"
 
-    document.getElementById("result").textContent = num1 + num2;
-});
+const model = new Sudoku();
+
+const view = new BoardView("board");
+const controller = new GameController(
+    model,
+    view
+);
+
+controller.start();
+
+
+
+
+
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
         navigator.serviceWorker.register("./service-worker.js")
