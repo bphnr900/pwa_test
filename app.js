@@ -1,3 +1,9 @@
+document.getElementById("addButton").addEventListener("click", () => {
+    const num1 = Number(document.getElementById("num1").value);
+    const num2 = Number(document.getElementById("num2").value);
+
+    document.getElementById("result").textContent = num1 + num2;
+});
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
         navigator.serviceWorker.register("./service-worker.js")
